@@ -39,6 +39,6 @@ public class UserRegisterationTestCase {
 	@Test
 	public void Sadtestforemail() {
 		 String email = "sam.su@co.in";
-	     assertFalse(UserRegistrationsMain.validlastName(email));
+	     assertFalse(UserRegistrationsMain.validEmail(email));
 	}
 }
