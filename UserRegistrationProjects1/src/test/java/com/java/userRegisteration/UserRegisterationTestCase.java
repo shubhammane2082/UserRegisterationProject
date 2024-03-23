@@ -55,13 +55,13 @@ public class UserRegisterationTestCase {
 	
 	@Test
 	public void HappytestforPassword() {
-		 String password = "Pass1234";
+		 String password = "Pass@1234";
 	     assertTrue(UserRegistrationsMain.validatePassword(password));
 	}
 	
 	@Test
 	public void SadtestforPassword() {
-		 String password = "pass";
+		 String password = "pass1234";
 	     assertFalse(UserRegistrationsMain.validatePassword(password));
 	}
 }
