@@ -17,33 +17,43 @@ public class UserRegistrationsMain {
 		System.out.println("Enter the Password : ");
 		String password=sc.next();
 		
-
-        if (UserRegistrationsMain.validfirstName(firstName))
-            System.out.println("You Enter Correct First Name is : " + firstName); 
-        else 
-        	System.out.println("You are not enter correct First Name...");
+         try{
+        	 if (UserRegistrationsMain.validfirstName(firstName))
+                 System.out.println("You Enter Correct First Name is : " + firstName); 
+             else 
+             	throw new UserRegisterationException("Invalid first Name...");
+        }
+        catch(Exception e)
+        {System.out.println(e.getMessage());}
         
-       if(UserRegistrationsMain.validlastName(lastName))
-    	   System.out.println("You Enter Correct last Name is : " + lastName);
-       else
-           System.out.println("You are not enter correct last Name...");
+        try {
+        	if(UserRegistrationsMain.validlastName(lastName))
+         	   System.out.println("You Enter Correct last Name is : " + lastName);
+            else
+             	throw new UserRegisterationException("Invalid last Name...");
+        }catch(Exception e){System.out.println(e.getMessage());}
        
-       if(UserRegistrationsMain.validEmail(email))
-    	   System.out.println("You Enter Correct Email is : " + email);
-       else
-           System.out.println("You are not enter correct email...");
+       try {
+    	   if(UserRegistrationsMain.validEmail(email))
+        	   System.out.println("You Enter Correct Email is : " + email);
+           else
+            	throw new UserRegisterationException("Invalid Email...");
+    	 }catch(Exception e) {System.out.println(e.getMessage());}
        
-       if(UserRegistrationsMain.validphoneNumber(phoneNumber))
-    	   System.out.println("You Enter Correct Phone Number is : " + phoneNumber);
-       else
-           System.out.println("You are not enter correct Phone Number...");
+       try {
+    	   if(UserRegistrationsMain.validphoneNumber(phoneNumber))
+        	   System.out.println("You Enter Correct Phone Number is : " + phoneNumber);
+           else
+        	   throw new UserRegisterationException("Invalid Phone Number...");
+       }catch(Exception e) {System.out.println(e.getMessage());}
        
-       if(UserRegistrationsMain.validatePassword(password))
-    	   System.out.println("You Enter Correct Password is : " + password);
-       else
-           System.out.println("You are not enter correct Password...");
-     }
-
+       try {
+    	   if(UserRegistrationsMain.validatePassword(password))
+        	   System.out.println("You Enter Correct Password is : " + password);
+           else
+        	   throw new UserRegisterationException("Invalid Password...");
+         }catch(Exception e) {System.out.println(e.getMessage());}
+    }
 
     public static boolean validfirstName(String firstName) 
     {
