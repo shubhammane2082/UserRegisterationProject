@@ -5,7 +5,30 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class UserRegisterationTestCase {
-
+	String[] validEmail={ "abc@yahoo.com",
+            "abc-100@yahoo.com",
+            "abc.100@yahoo.com",
+            "abc111@abc.com",
+            "abc-100@abc.net",
+            "abc.100@abc.com.au",
+            "abc@1.com",
+            "abc@gmail.com.com",
+            "abc+100@gmail.com"};
+	
+	String[] InvalidEmail={"abc",
+            "abc@.com.my",
+            "abc123@gmail.a",
+            "abc123@.com",
+            "abc123@.com.com",
+            ".abc@abc.com",
+            "abc()*@gmail.com",
+            "abc@%*.com",
+            "abc..2002@gmail.com",
+            "abc.@gmail.com",
+            "abc@abc@gmail.com",
+            "abc@gmail.com.1a",
+            "abc@gmail.com.aa.au"};
+	
 	@Test
 	public void HappytestforFirstName() {
 		 String name = "Jos";
@@ -65,45 +88,9 @@ public class UserRegisterationTestCase {
 	     assertFalse(UserRegistrationsMain.validatePassword(password));
 	}
 	
-
-	@Test
-	public void HappytestforsampleEmails() 
-	{
-		String[] validEmail={ "abc@yahoo.com",
-                "abc-100@yahoo.com",
-                "abc.100@yahoo.com",
-                "abc111@abc.com",
-                "abc-100@abc.net",
-                "abc.100@abc.com.au",
-                "abc@1.com",
-                "abc@gmail.com.com",
-                "abc+100@gmail.com"};
-	    assertTrue(UserRegistrationsMain.checkAllEmails(validEmail));
-	}
-	
-	@Test
-	public void SadtestforsampleEmails() 
-	{
-		String[] InvalidEmail={"abc",
-                "abc@.com.my",
-                "abc123@gmail.a",
-                "abc123@.com",
-                "abc123@.com.com",
-                ".abc@abc.com",
-                "abc()*@gmail.com",
-                "abc@%*.com",
-                "abc..2002@gmail.com",
-                "abc.@gmail.com",
-                "abc@abc@gmail.com",
-                "abc@gmail.com.1a",
-                "abc@gmail.com.aa.au"};
-	    assertFalse(UserRegistrationsMain.checkAllEmails(InvalidEmail));
-	}
-	
 	@Test
 	public void HappytesttocheckAllTestCase() {
 		boolean result=UserRegistrationsMain.passAlltestCases("Jos", "Buttler", "abc.xyz@bl.co.in", "919370740128", "Pass@1234");
-		System.out.println("HappytesttocheckAllTestCase is : "+result);
 		assertTrue(result);
 		
 	}
@@ -112,8 +99,18 @@ public class UserRegisterationTestCase {
 	public void SadtesttocheckAllTestCase() 
 	{
 		boolean result=UserRegistrationsMain.passAlltestCases("sanju", "samson", "abc.xyz@co.in", "9370740128", "Mass1234");
-		System.out.println("SadtesttocheckAllTestCase is : "+result);
 		assertFalse(result);
-		
+	}
+	
+	@Test
+	public void HappytestforsampleEmails()
+	{
+	  assertTrue(UserRegistrationsMain.checkAllEmails(validEmail));
+	}
+	
+	@Test
+	public void SadtestforsampleEmails() 
+	{
+	    assertFalse(UserRegistrationsMain.checkAllEmails(InvalidEmail));
 	}
 }
