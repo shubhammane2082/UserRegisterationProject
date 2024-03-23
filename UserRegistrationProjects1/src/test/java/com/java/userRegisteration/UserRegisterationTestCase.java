@@ -61,7 +61,7 @@ public class UserRegisterationTestCase {
 	
 	@Test
 	public void SadtestforPassword() {
-		 String password = "pass122";
+		 String password = "pass";
 	     assertFalse(UserRegistrationsMain.validatePassword(password));
 	}
 }

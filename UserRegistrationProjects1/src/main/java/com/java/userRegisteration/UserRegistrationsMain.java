@@ -73,7 +73,7 @@ public class UserRegistrationsMain {
     }
     public static boolean validatePassword(String password) 
 	{
-		String regexPattern="[A-Z]{1,}[A-Za-z0-9]{7,}";
+		String regexPattern="[A-Z]{1,}[A-Za-z0-9]{6,}[0-9]{1,}";
 	    boolean result=Pattern.matches(regexPattern, password);
 		return result;
 	}
