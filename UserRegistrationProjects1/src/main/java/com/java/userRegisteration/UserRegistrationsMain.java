@@ -78,4 +78,18 @@ public class UserRegistrationsMain {
 		return result;
 	}
     
+    public static boolean checkAllpassword(String[] validEmail)
+    {
+        String regexPattern = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";;
+    	for(String emails : validEmail)
+    	{
+    		if(!Pattern.matches(regexPattern, emails))
+    		{
+    			return false;
+    		}
+    	}
+    	return true;
+    	
+    }
+    
 }
