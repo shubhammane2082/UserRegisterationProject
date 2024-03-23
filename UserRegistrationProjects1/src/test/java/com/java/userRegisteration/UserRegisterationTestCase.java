@@ -38,7 +38,7 @@ public class UserRegisterationTestCase {
 	
 	@Test
 	public void Sadtestforemail() {
-		 String email = "sam.su@co.in";
+		 String email = "sam.ju@co.in";
 	     assertFalse(UserRegistrationsMain.validEmail(email));
 	}
 	@Test
@@ -78,7 +78,7 @@ public class UserRegisterationTestCase {
                 "abc@1.com",
                 "abc@gmail.com.com",
                 "abc+100@gmail.com"};
-	    assertTrue(UserRegistrationsMain.checkAllpassword(validEmail));
+	    assertTrue(UserRegistrationsMain.checkAllEmails(validEmail));
 	}
 	
 	@Test
@@ -97,6 +97,23 @@ public class UserRegisterationTestCase {
                 "abc@abc@gmail.com",
                 "abc@gmail.com.1a",
                 "abc@gmail.com.aa.au"};
-	    assertFalse(UserRegistrationsMain.checkAllpassword(InvalidEmail));
+	    assertFalse(UserRegistrationsMain.checkAllEmails(InvalidEmail));
+	}
+	
+	@Test
+	public void HappytesttocheckAllTestCase() {
+		boolean result=UserRegistrationsMain.passAlltestCases("Jos", "Buttler", "abc.xyz@bl.co.in", "919370740128", "Pass@1234");
+		System.out.println("HappytesttocheckAllTestCase is : "+result);
+		assertTrue(result);
+		
+	}
+	
+	@Test
+	public void SadtesttocheckAllTestCase() 
+	{
+		boolean result=UserRegistrationsMain.passAlltestCases("sanju", "samson", "abc.xyz@co.in", "9370740128", "Mass1234");
+		System.out.println("SadtesttocheckAllTestCase is : "+result);
+		assertFalse(result);
+		
 	}
 }

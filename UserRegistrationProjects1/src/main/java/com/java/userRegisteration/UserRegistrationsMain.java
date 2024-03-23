@@ -78,7 +78,7 @@ public class UserRegistrationsMain {
 		return result;
 	}
     
-    public static boolean checkAllpassword(String[] validEmail)
+    public static boolean checkAllEmails(String[] validEmail)
     {
         String regexPattern = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";;
     	for(String emails : validEmail)
@@ -90,6 +90,14 @@ public class UserRegistrationsMain {
     	}
     	return true;
     	
+    }
+    
+    public static boolean passAlltestCases(String firstName,String lastName,String email,String phoneNumber,String password)
+    {
+    	if(validfirstName(firstName)&&validlastName(lastName)&&validEmail(email)&&validphoneNumber(phoneNumber)&&validatePassword(password)) {
+    		return true;
+    	}
+    	return false;
     }
     
 }
