@@ -52,4 +52,16 @@ public class UserRegisterationTestCase {
 		 String phoneNumber = "93707401";
 	     assertFalse(UserRegistrationsMain.validphoneNumber(phoneNumber));
 	}
+	
+	@Test
+	public void HappytestforPassword() {
+		 String password = "Pass1234";
+	     assertTrue(UserRegistrationsMain.validatePassword(password));
+	}
+	
+	@Test
+	public void SadtestforPassword() {
+		 String password = "pass122";
+	     assertFalse(UserRegistrationsMain.validatePassword(password));
+	}
 }
