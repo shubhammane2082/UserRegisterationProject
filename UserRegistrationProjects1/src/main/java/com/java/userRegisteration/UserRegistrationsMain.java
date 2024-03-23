@@ -12,6 +12,8 @@ public class UserRegistrationsMain {
         String lastName=sc.next();
         System.out.println("Enter the Email : ");
 		String email=sc.next();
+		System.out.println("Enter the Phone No. : ");
+		String phoneNumber=sc.next();
 
         if (UserRegistrationsMain.validfirstName(firstName))
             System.out.println("You Enter Correct First Name is : " + firstName); 
@@ -27,6 +29,11 @@ public class UserRegistrationsMain {
     	   System.out.println("You Enter Correct Email is : " + email);
        else
            System.out.println("You are not enter correct email...");
+       
+       if(UserRegistrationsMain.validphoneNumber(phoneNumber))
+    	   System.out.println("You Enter Correct Phone Number is : " + phoneNumber);
+       else
+           System.out.println("You are not enter correct Phone Number...");
      }
 
     public static boolean validfirstName(String firstName) 
@@ -45,8 +52,14 @@ public class UserRegistrationsMain {
     
     public static boolean validEmail(String email)
     {
-    	String regexPattern = "[]a-z]{1,}[.][a-z]*[@][a-z]{1,}[.][a-z]*[.][a-z]*";
+    	String regexPattern = "[a-z]{1,}[.][a-z]*[@][a-z]{1,}[.][a-z]*[.][a-z]*";
         boolean result = Pattern.matches(regexPattern, email);
+        return result;
+    }
+    public static boolean validphoneNumber(String phoneNumber)
+    {
+    	String regexPattern = "^[0-9]{2}[0-9]{10}$";
+        boolean result = Pattern.matches(regexPattern, phoneNumber);
         return result;
     }
     
