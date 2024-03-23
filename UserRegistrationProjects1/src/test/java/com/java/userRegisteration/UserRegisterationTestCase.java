@@ -20,13 +20,25 @@ public class UserRegisterationTestCase {
 	
 	@Test
 	public void HappytestforlastName() {
-		 String name = "Buttler";
-	     assertTrue(UserRegistrationsMain.validlastName(name));
+		 String lastname = "Buttler";
+	     assertTrue(UserRegistrationsMain.validlastName(lastname));
 	}
 	
 	@Test
 	public void SadtestforlastName() {
-		 String name = "samson";
-	     assertFalse(UserRegistrationsMain.validlastName(name));
+		 String lastname = "samson";
+	     assertFalse(UserRegistrationsMain.validlastName(lastname));
+	}
+	
+	@Test
+	public void Happytestforemail() {
+		 String email = "abc.xyz@bl.co.in";
+	     assertTrue(UserRegistrationsMain.validEmail(email));
+	}
+	
+	@Test
+	public void Sadtestforemail() {
+		 String email = "sam.su@co.in";
+	     assertFalse(UserRegistrationsMain.validlastName(email));
 	}
 }

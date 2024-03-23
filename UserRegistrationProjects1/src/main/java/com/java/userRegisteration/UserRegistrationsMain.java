@@ -10,22 +10,24 @@ public class UserRegistrationsMain {
         String firstName = sc.next();
         System.out.println("Enter the Last Name : ");
         String lastName=sc.next();
+        System.out.println("Enter the Email : ");
+		String email=sc.next();
 
-        if (UserRegistrationsMain.validfirstName(firstName)) {
-            System.out.println("You Enter Correct First Name is : " + firstName);
-        } else {
-            System.out.println("You are not enter correct First Name...");
-        }
+        if (UserRegistrationsMain.validfirstName(firstName))
+            System.out.println("You Enter Correct First Name is : " + firstName); 
+        else 
+        	System.out.println("You are not enter correct First Name...");
         
        if(UserRegistrationsMain.validlastName(lastName))
-       {
-    	   System.out.println("You Enter Correct last Name is : " + firstName);
-       }
-       else {
+    	   System.out.println("You Enter Correct last Name is : " + lastName);
+       else
            System.out.println("You are not enter correct last Name...");
-
-       }
-    }
+       
+       if(UserRegistrationsMain.validEmail(email))
+    	   System.out.println("You Enter Correct Email is : " + email);
+       else
+           System.out.println("You are not enter correct email...");
+     }
 
     public static boolean validfirstName(String firstName) 
     {
@@ -40,4 +42,12 @@ public class UserRegistrationsMain {
         boolean result = Pattern.matches(regexPattern, lastName);
         return result;
     }
+    
+    public static boolean validEmail(String email)
+    {
+    	String regexPattern = "[]a-z]{1,}[.][a-z]*[@][a-z]{1,}[.][a-z]*[.][a-z]*";
+        boolean result = Pattern.matches(regexPattern, email);
+        return result;
+    }
+    
 }
