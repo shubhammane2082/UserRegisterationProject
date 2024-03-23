@@ -14,8 +14,6 @@ public class UserRegistrationsMain {
 		String email=sc.next();
 		System.out.println("Enter the Phone No. : ");
 		String phoneNumber=sc.next();
-		System.out.println("Enter the Password : ");
-		String password=sc.next();
 		
 
         if (UserRegistrationsMain.validfirstName(firstName))
@@ -38,10 +36,6 @@ public class UserRegistrationsMain {
        else
            System.out.println("You are not enter correct Phone Number...");
        
-       if(UserRegistrationsMain.validatePassword(password))
-    	   System.out.println("You Enter Correct Password is : " + password);
-       else
-           System.out.println("You are not enter correct Password...");
      }
 
 
@@ -73,7 +67,7 @@ public class UserRegistrationsMain {
     }
     public static boolean validatePassword(String password) 
 	{
-		String regexPattern="[A-Za-z0-9]{8,}";
+		String regexPattern="[A-Z]{1,}[A-Za-z0-9]{7,}";
 	    boolean result=Pattern.matches(regexPattern, password);
 		return result;
 	}

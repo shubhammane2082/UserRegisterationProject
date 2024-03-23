@@ -41,4 +41,15 @@ public class UserRegisterationTestCase {
 		 String email = "sam.su@co.in";
 	     assertFalse(UserRegistrationsMain.validEmail(email));
 	}
+	@Test
+	public void HappytestforphoneNumber() {
+		 String phoneNumber = "919370740128";
+	     assertTrue(UserRegistrationsMain.validphoneNumber(phoneNumber));
+	}
+	
+	@Test
+	public void SadtestforphoneNumber() {
+		 String phoneNumber = "93707401";
+	     assertFalse(UserRegistrationsMain.validphoneNumber(phoneNumber));
+	}
 }
