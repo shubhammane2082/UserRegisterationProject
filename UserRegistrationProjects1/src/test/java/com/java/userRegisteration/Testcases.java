@@ -104,9 +104,9 @@ class Testcases {
 			assertFalse(result);
 		}
 
-	//21 Test Case	
+	//22 Test Case	
 	@ParameterizedTest
-	@ValueSource(strings = {"abc@yahoo.com",
+	@ValueSource(strings = { "abc@yahoo.com",
             "abc-100@yahoo.com",
             "abc.100@yahoo.com",
             "abc111@abc.com",
@@ -114,7 +114,7 @@ class Testcases {
             "abc.100@abc.com.au",
             "abc@1.com",
             "abc@gmail.com.com",
-            "abc+100@gmail.com"})
+            "abc+100@gmail.com" })
 	public void happyallltestCases(String inputText)
 	{
 		assertTrue(allEmailvalid.test(inputText));
@@ -122,7 +122,7 @@ class Testcases {
 	
 	//33 Test Case
 	@ParameterizedTest
-	@ValueSource(strings = {"abc",
+	@ValueSource(strings = { "abc",
             "abc@.com.my",
             "abc123@gmail.a",
             "abc123@.com",
@@ -133,7 +133,7 @@ class Testcases {
             "abc..2002@gmail.com",
             "abc.@gmail.com",
             "abc@abc@gmail.com",
-            "abc@gmail.com.1a"})
+            "abc@gmail.com.1a" })
 	public void SadallltestCases(String inputText)
 	{
 		assertFalse(allEmailvalid.test(inputText));
