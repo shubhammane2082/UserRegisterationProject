@@ -58,19 +58,6 @@ public class UserRegistrationsMain {
         	   throw new UserRegisterationException("Invalid Password...");
          }catch(Exception e) {System.out.println(e.getMessage());}
     }
-    public static boolean checkAllEmails(String[] validEmail)
-    {
-        String regexPattern = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-    	for(String emails : validEmail)
-    	{
-    		if(!Pattern.matches(regexPattern, emails))
-    		{
-    			return false;
-    		}
-    	}
-    	return true;
-    	
-    }
     
     public static boolean passAlltestCases(String firstName,String lastName,String email,String phoneNumber,String password)
     {
